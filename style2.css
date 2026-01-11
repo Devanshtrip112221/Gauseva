@@ -1,0 +1,97 @@
+body{
+    background-color:black;
+    color: aliceblue;
+}
+.header {
+  background: linear-gradient(90deg, rgb(38, 156, 38), rgb(79, 242, 15));
+  padding: 25px 40px;   
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.6s ease-in-out;
+  min-height: 80px;    
+}
+
+.header:hover {
+  background: linear-gradient(90deg, green, rgb(26, 243, 26));
+}
+
+
+.header h4 {
+  margin: 0;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.header h4:hover {
+  transform: scale(1.1);
+  color: #222;
+}
+.homepg{
+    text-decoration: none;
+    color: white;
+}
+:hover.homepg{
+    color: #ffcc33;
+}
+
+
+
+
+
+  .mySwiper {
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(to right, #0b3d0b, #1a5a1a); /* green-black gradient */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  color: #fff; /* default text color */
+  font-family: Arial, sans-serif;
+}
+
+/* Each slide */
+.swiper-slide {
+  padding: 20px;
+  background-color: rgba(0,0,0,0.6); /* semi-transparent black overlay for contrast */
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+/* Headings inside slides */
+.swiper-slide h2 {
+  color: #b4ffb4; /* light green heading */
+  margin-bottom: 10px;
+}
+
+/* Paragraphs and lists */
+.swiper-slide p, 
+.swiper-slide li {
+  color: #e0ffe0; /* soft green text */
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* Images inside slides */
+.swiper-slide img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+/* Swiper navigation buttons */
+.swiper-button-next, .swiper-button-prev {
+  color: #b4ffb4; /* light green arrows */
+}
+
+/* Swiper pagination bullets */
+.swiper-pagination-bullet {
+  background: #b4ffb4; /* green bullets */
+  opacity: 0.8;
+}
+
+.swiper-pagination-bullet-active {
+  background: #00ff00; /* bright green active bullet */
+}

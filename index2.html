@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div>
+        <div class="opage">
+            <div class="header">
+                <div class="ttwo"><a href="userinfo.html">user</a></div>
+                <div class="align">
+            <div class="detail">
+                <div class="one">Home</div>
+                <div class="two"><a href="about.html">About</a></div>
+                <div class="two"><a href="donate.html">Donate</a></div>
+
+                 <div class="two"><a href="common.html">seva</a></div>
+                
+               <button id="logoutBtn">Logout</button>
+            </div>
+           <div class="container">
+      <form id="gauSevaForm" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <textarea name="message" placeholder="Your Gau Seva Message" required></textarea>
+
+        <label for="photo-upload" class="upload-label">Upload Photo</label>
+        <input type="file" id="photo-upload" name="photo" accept="image/*" capture="environment" style="display:none;" />
+        <div id="preview"></div>
+
+        <input type="hidden" name="latitude" />
+        <input type="hidden" name="longitude" />
+
+        <button id="shareLocationBtn" type="button">Share My Location</button>
+        <button type="submit">Submit</button>
+      </form>
+        
+
+      <div id="gauSevaMessages"></div>
+    </div>
+
+
+
+
+</form>
+
+<
+
+  </div>
+   
+</div> 
+    <div class="volunteer-text">
+   
+      <h1 class="volunteer">Become a Volunteer!</h1>
+      <p>We invite you to join us in making a difference... <br>
+      <strong>Ways to Support</strong><br>
+       Whether it’s feeding, grooming, or simply spending time with them, your presence makes a difference.<br>
+       Your generous contributions help us provide food, shelter, and medical care for our beloved cows.<br>
+       Share our mission with your friends, family, and community.</p>
+    </div>
+
+   <div class="uploading">
+      <p>Click the button, upload a cow’s photo,<br>
+         and be a part of our mission to help them.</p>
+   </div>
+        </div>
+       
+
+
+ 
+
+  
+
+</div>
+ <video autoplay muted loop class="bg-video">
+  <source src="233593.mp4" type="video/mp4">
+  
+</video>
+
+    </div>
+    <div class="bee1"></div>
+    <div class="bee2"></div>
+
+    <div class="swiper">
+        <div class="swiper-track">
+        <p>Dedicated to Gau Seva | Serving with love and compassion </p>
+         <p>Dedicated to Gau Seva | Serving with love and compassion </p>
+    <p>Dedicated to Gau Seva | Serving with love and compassion </p>
+    <p>Dedicated to Gau Seva | Serving with love and compassion </p>
+ </div>
+    </div>
+    <div class="image">
+        <img src="cow-herd-india-PG4NFB-1024x682.jpg" alt="Cow Herd">
+      <p class="text1">In several cultures, cows hold religious significance and <br>
+        are worshipped as symbols of abundance and fertility. They are also central to <br>
+        traditions such as Hinduism’s reverence for the cow as a sacred animal. <br>
+
+         Improving productivity of farm animals is one of the major challenges. <br>
+             The average annual milk yield of Indian cattle is 1172 kg <br>
+              which is only about 50% of the global average. <br>
+          Indus valley civilization is the earliest known culture of the Indian subcontinent. <br>
+             It developed primarily during the Chalcolithic period (3300-1300 BCE). <br>
+              Most of the sites belonging to this period have been excavated from modern day- India and Pakistan. <br>
+
+Harappa and Mohenjodaro were the two great cities of the Indus Valley Civilization, <br>
+ emerging around 2600 BCE along the Indus River Valley in the Sindh and <br>
+  Punjab provinces of Pakistan. Their discovery and excavation in the 19th and <br>
+   20th centuries provided important archaeological data regarding the civilization’s <br>
+    architecture, technology, art, trade, transportation, writing, and religion. <br>
+cow, in common parlance, a domestic bovine, regardless of sex and age, usually of <br>
+ the species Bos taurus. In precise usage, the name is given to mature females of <br>
+  several large mammals, including cattle (bovines), moose, elephants, sea lions, and whales. <br>
+
+Domestic cows are one of the most common farm animals around the world, and the English language <br>
+ has several words to describe these animals at various ages. A baby cow is called a calf. <br>
+  A female calf is sometimes called a heifer calf and a male a bull calf. A heifer is a <br>
+  female that has not had any offspring. The term usually refers to immature females; after <br>
+   giving birth to her first calf, however, a heifer becomes a cow. An adult male is known as a bull. <br>
+    Many male cattle are castrated to reduce their aggressive tendencies and make them more tractable. <br> 
+    Young neutered males, which are primarily raised for beef, are called steers or bullocks, <br>
+     whereas adult neutered males, which are usually used for draft purposes, are known as oxen.  <br>
+      A group of cows, cattle, or kine (an archaic term for more than one cow) constitutes a herd. <br>
+       English lacks a gender-neutral singular form, and so “cow” is used for both female  <br>
+       individuals and all domestic bovines. <br>
+</p>
+    </div>
+ 
+
+</body>
+<script src="script.js"></script><script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+async function loadSevaLocations() {
+  const res = await fetch('/gau-seva-messages');
+  const messages = await res.json();
+  const container = document.getElementById('sevaLocations');
+  const map = L.map('sevaMap').setView([20.5937, 78.9629], 5); // India center
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  container.innerHTML = messages.map(msg => `
+    <div class="card">
+      <h4>${msg.name}</h4>
+      <p>${msg.message}</p>
+      ${msg.latitude && msg.longitude ? `<p>Location: ${msg.latitude}, ${msg.longitude}</p>` : ''}
+    </div>
+  `).join('');
+
+  messages.forEach(msg => {
+    if (msg.latitude && msg.longitude) {
+      L.marker([msg.latitude, msg.longitude]).addTo(map)
+        .bindPopup(`<strong>${msg.name}</strong><br>${msg.message}`);
+    }
+  });
+}
+
+loadSevaLocations();
+</script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</html>

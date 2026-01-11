@@ -1,0 +1,592 @@
+body {
+  margin: 0;
+  width: 100%;
+  min-height: 100vh; 
+  background-color: black;
+  overflow-x: hidden; 
+}
+
+.header {
+  background: linear-gradient(90deg, rgb(85, 249, 85), rgb(112, 255, 112), green);
+  padding: 45px;
+  width: 100%;
+  margin: 0 auto;
+  height: 50px;
+  margin: 0;
+  position: relative;
+  
+  
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  color: black;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.header div {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.two a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.one:hover,
+.two:hover,
+.three:hover {
+  color: aquamarine;
+}
+.ttwo a{
+  text-decoration: none;
+  font-weight: 400;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+  
+
+}
+
+button {
+  background-color: black;
+  color: aliceblue;
+  width: 90px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button.login:hover {
+  color: black;
+  background-color: white;
+}
+
+.bee1,
+.bee2 { 
+  width: 30vw;
+  height: 30vw;
+  right: 400px;
+  top: 500px;
+  position: absolute;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  z-index: 1;
+}
+
+.bee1 {
+  background-color: green;
+  border-radius: 50%;
+  filter: blur(55px);
+  animation-name: anim1;
+  position: absolute;
+}
+
+.bee2 {
+  background-color: rgb(23, 195, 23);
+  border-radius: 40%;
+  filter: blur(35px);
+  animation-name: anim2;
+}
+
+@keyframes anim1 {
+  from {
+    transform: translate(-20%, 15%);
+  }
+  to {
+    transform: translate(30%, -30%);
+  }
+}
+
+@keyframes anim2 {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(-20%, 10%);
+  }
+}
+
+.upload-section {
+
+               
+
+  
+  
+ .location-card {
+  position: absolute;
+  top: 100px;
+  right: 0;
+  width: 320px;
+  background: rgba(0, 0, 0, 0.5); /* translucent dark background */
+  border-radius: 15px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.3);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 255, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 10;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.location-img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+#share-location {
+  padding: 10px 20px;
+  background-color: rgb(23, 195, 23);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#share-location:hover {
+  background-color: rgb(30, 220, 30);
+}
+
+#location-display {
+  font-size: 14px;
+  text-align: center;
+}
+
+}
+
+.container{
+  display: flex;
+  display: flex;
+  justify-content: flex-start; /* left to right */
+  align-items: flex-start;     
+  gap: 30px;                   
+  margin-top: 100px;
+}
+.upload-section{
+align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 100px;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 16px rgba(0, 255, 0, 0.3);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(0, 255, 0, 0.4);
+    display: flex
+}
+   
+
+
+.volunteer-text {
+  position: absolute;  
+  right: 0;
+  top: 100px; 
+  
+  max-width: 350px;
+  color: white;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 60vw;
+  padding: 12px;
+  border-radius: 10px;
+  font-family: 'Segoe UI', sans-serif;
+}
+p{
+  color: white;
+  position: relative;
+  right: 10px;
+  margin-top: 60px;
+
+  
+}
+
+.volunteer{
+  color: aliceblue;
+  text-decoration: solid;
+}
+
+.uploading{
+  color: white;
+  font-weight: 200;
+  font-size: 20px;
+  margin-top: 400px;
+  position: relative;
+  z-index: 10;
+  margin-left: 80vw;
+}
+.upload-section:hover {
+  transform: scale(1.03);
+}
+
+.upload-label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 255, 0, 0.8); 
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-label:hover {
+  background-color: rgba(0, 255, 0, 1);
+}
+
+#preview {
+  margin-top: 15px;
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px dashed rgba(0, 255, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 255, 0, 0.7);
+  font-size: 14px;
+}
+
+#preview {
+  margin-top: 5px;
+  width: 300px;
+  height: 450px;
+  border: 2px linen #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+  
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 600px) {
+  .location-section {
+    padding: 15px;
+  }
+
+  #share-location {
+    width: 100%;
+  }
+}
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.tail {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #fceabb, #f8b500);
+  color: #4b2e0e;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  border-top: 2px solid #d4a017;
+  z-index: 999;
+}
+
+
+ .swiper {
+  margin-top: 1200px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+ background: rgba(0, 0, 0, 0.5); 
+  padding: 10px 0;
+  position: relative;
+  height: 80px;
+}
+.swiper-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 15s linear infinite;
+}
+
+.swiper p {
+  flex: none;
+  margin: 0 50px; 
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+
+}
+
+
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.image {
+  width: 100%;
+  height: 400px;
+  background-size: cover;   
+  background-position: center; 
+  border-radius: 10px;
+  filter: brightness(50%);
+  display: flex;
+  gap: 150px;
+}
+.image img{
+  width: 700px;
+  height: 700px;
+}
+
+.text1{
+  color: white;
+  font-size: medium;
+  font-weight: 300;
+}
+.volunteer-text h1:hover{
+    background-image: url(64307a385a15060019d8927d.webp);
+}
+
+#gauSevaForm {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  position: relative;
+  z-index: 30;
+  background: transparent black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#gauSevaForm input[type="text"],
+#gauSevaForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#gauSevaForm button[type="submit"] {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#gauSevaForm button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.upload-section {
+  margin-bottom: 15px;
+}
+
+.upload-label {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#preview img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#gauSevaMessages {
+  margin-top: 30px;
+}
+
+#gauSevaMessages .card {
+  background: rgba(0, 128, 0, 0.05);
+  border: 1px solid #0a0;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+#gauSevaMessages .card img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+
+
+#manual-location {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 128, 0, 0.1);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#manual-location label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: white;
+}
+
+#manual-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+#submit-location {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#submit-location:hover {
+  background-color: #218838;
+}
+#gauSevaMessages {
+  left: 0;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgb(55, 253, 55); 
+  color: #fff; 
+  border-radius: 10px;
+  
+  
+  display: flex;
+  margin-top: 1200px;
+    position: absolute;
+  top: 250px;        
+  left: 30px;         
+  width: 100%;
+  padding: 15px;
+  background-color:transparent(rgb(39, 236, 39));
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-size: 1rem;
+  z-index: 100;
+  overflow-y: auto;
+  max-height: 400px;
+
+  
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+#gauSevaMessages, .card-box {
+  max-height: 400px; 
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin; 
+  scrollbar-color: #ffd54f transparent;
+}
+
+/* For Chrome, Edge */
+#gauSevaMessages::-webkit-scrollbar,
+.card-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+#gauSevaMessages::-webkit-scrollbar-thumb,
+.card-box::-webkit-scrollbar-thumb {
+  background-color: #ffd54f;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+.card {
+      background-color: #222;
+      border: 2px solid #28a745;
+      border-radius: 10px;
+      width: 300px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.5s;
+    }
+
+    .card:hover {
+      transform: rotateX(10deg);
+    }
+
+    .card img {
+      width: 40%;
+      height: 20px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.2em;
+      color: #28a745;
+    }

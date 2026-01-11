@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Gau Seva</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+ <div class="header">
+  <h4>About Gau Seva</h1>
+   <div class="homepg">
+    <a href="index2.html">home</a>
+  </div>
+  </div> 
+ <div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <p>Gau Seva ka matlab hai gaayon ki seva karna. Is app ka maksad hai ki har koi aasani se gau mata ki seva kar sake.</p>
+    </div>
+    <div class="swiper-slide">
+      <h2>Kaise Use Kare?</h2>
+      <p id="myText">
+        share location<br>
+        Go to the home page, there you will find 'Share your location', click on it<br>
+        <img src="Screenshot 2025-09-28 001918.png" alt="Location Icon">
+      </p>
+      <ul>
+        <li>App par apna location share karke aas paas ke gau shala ya stray cows dekh sakte ho.<br></li>
+        <li id="cowCondition">
+          Upload photo option se cow ki condition share kar sakte ho.<br>
+          <img src="Screenshot 2025-09-28 005606.png" alt="Cow Image">
+        </li>
+        <li>Donation ya seva ka option bhi available hoga.</li>
+      </ul>
+    </div>
+    <div class="swiper-slide">
+      <h2>Gaay ko Khana Dene ke Niyam</h2>
+      <ul>
+        <li>Hamesha taja chara ya gehu ka chhilka dena chahiye.</li>
+        <li>Plastic bags ya kachra kabhi na khilayein.</li>
+        <li>Paani saaf aur paryaapt matra me uplabdh karayein.</li>
+      </ul>
+    </div>
+    <div class="swiper-slide">
+      <h2>gar Gaay Bimar ho</h2>
+      <ul>
+        <li>Agar gaay ko bukhar (fever) ho to turant vet doctor se sampark karein.</li>
+        <li>Bimar cow ki photo upload karke seva group me share kar sakte ho.</li>
+        <li>Doctor ke aane tak saaf jagah par araam karwayen.</li>
+      </ul>
+    </div>
+  </div>
+ 
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+  <!-- Optional: pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+
+
+</body>
+<script>
+  const para = document.getElementById('myText');
+  para.addEventListener('click', () => {
+    para.classList.toggle('clicked'); 
+  });
+  const listItem = document.getElementById('cowCondition');
+  listItem.addEventListener('click', () => {
+    listItem.classList.toggle('clicked'); 
+  });
+
+   const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
+
+</html>

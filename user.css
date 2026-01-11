@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #121212;
+  color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #1e1e1e;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #28a745;
+}
+
+.user-data h3 {
+  margin-bottom: 10px;
+  color: aquamarine;
+}
+
+.user-data p {
+  margin: 5px 0;
+  font-size: 16px;
+}

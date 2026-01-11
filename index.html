@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Create Account / Login</title>
+  <link rel="stylesheet" href="style1.css"> 
+</head>
+<body>
+  <div class="card">
+    <h2>Create account</h2>
+    <label>Name</label>
+    <input id="name" placeholder="Your name" />
+    <label>Email</label>
+    <input id="email" type="email" placeholder="you@example.com" />
+    <label>Phone (optional)</label>
+    <input id="phone" placeholder="1234567890" />
+    <label>Password</label>
+    <input id="password" type="password" placeholder="Choose a password" />
+    <button id="registerBtn" class="primary">Create account</button>
+
+    <div class="small-login">
+      Already have account? <span id="showLogin" class="linklike">Login</span>
+    </div>
+
+    <div id="loginBox" style="display:none; margin-top:12px;">
+      <hr />
+      <h3>Login</h3>
+      <label>Email</label>
+      <input id="loginEmail" type="email" placeholder="your email" />
+      <label>Password</label>
+      <input id="loginPassword" type="password" placeholder="password" />
+      <button id="loginBtn">Login</button>
+    </div>
+
+    <div id="result" class="result" style="display:none;"></div>
+  </div>
+
+  <script src="script1.js"></script> 
+</body>
+</html>

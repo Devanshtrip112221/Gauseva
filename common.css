@@ -1,0 +1,163 @@
+ body {
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: green;
+      font-size: 2rem;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    #map {
+      width: 90%;
+      height: 70vh;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      z-index: 10;
+    }
+
+    .photo-list {
+      width: 90%;
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .photo-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .photo-card:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .photo-card a {
+      color: #ffd54f;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .photo-card a:hover {
+      text-decoration: underline;
+    }
+
+    video.bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+      filter: brightness(0.5);
+    }
+
+.card-box {
+  width: 90%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  padding: 15px;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card h3, .card h4 {
+  margin: 0 0 10px;
+  color: #ffd54f;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+.card small {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+
+
+.header {
+  background-color: #4caf50; /* Green background */
+  padding: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.detail {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.detail a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  
+}
+
+.detail a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+
+
+
+

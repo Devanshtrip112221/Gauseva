@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seva Map | Gau Raksha</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  
+  <link rel="stylesheet" href="common.css" />
+
+  <style>
+    #map, #sevaMap {
+      height: 400px;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop class="bg-video">
+    <source src="233593.mp4" type="video/mp4">
+  </video>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="detail">
+      <div class="one"><a href="index2.html">Home</a></div>
+      <div class="two"><a href="about.html">About</a></div>
+      <div class="two"><a href="common.html">Seva</a></div>
+    </div>
+  </div>
+
+  <h1>Live Gau Seva Map</h1>
+
+  <!-- Main Map -->
+  <div id="map"></div>
+
+  <!-- Seva Section -->
+  <div class="seva-section">
+    <div id="sevaMessages" class="card-box"></div>
+    <div id="sevaMap" class="card-box"></div>
+  </div>
+
+  <!-- Photo Cards -->
+  <div class="photo-list" id="photoList"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+    
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const map = L.map('map').setView([21.25, 81.63], 9);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18
+    }).addTo(map);
+
+    const photoList = document.getElementById('photoList');
+
+    onSnapshot(collection(db, "cow_reports"), (snapshot) => {
+      snapshot.docChanges().forEach(change => {
+        if (change.type === "added") {
+          const data = change.doc.data();
+
+          const marker = L.marker([data.lat, data.lng]).addTo(map);
+          marker.bindPopup(`
+            <div style="text-align:center">
+              <img src="${data.photoURL}" style="width:180px;border-radius:10px"><br>
+              <b>${data.note || "No details"}</b><br>
+              <a href="https://www.google.com/maps?q=${data.lat},${data.lng}" target="_blank">
+                Open in Google Maps
+              </a>
+            </div>
+          `);
+
+          const card = document.createElement('div');
+          card.className = "photo-card";
+          card.innerHTML = `
+            <img src="${data.photoURL}">
+            <p><b>${data.note || "No description"}</b></p>
+            <a href="https://www.google.com/maps?q=${data.lat},${data.lng}" target="_blank">
+              View Location
+            </a>
+          `;
+          photoList.appendChild(card);
+        }
+      });
+    });
+
+   
+    async function loadSevaMessages() {
+      try {
+        const res = await fetch('/gau-seva-messages');
+        const messages = await res.json();
+
+        const container = document.getElementById('sevaMessages');
+        const sevaMap = L.map('sevaMap').setView([20.5937, 78.9629], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+          .addTo(sevaMap);
+
+        container.innerHTML = messages.map(msg => `
+          <div class="card">
+            <h4>${msg.name}</h4>
+            <p>${msg.message}</p>
+            ${msg.photo ? `<img src="${msg.photo}" width="200">` : ""}
+            <small>${new Date(msg.timestamp).toLocaleString()}</small>
+          </div>
+        `).join("");
+
+        messages.forEach(msg => {
+          if (msg.latitude && msg.longitude) {
+            L.marker([msg.latitude, msg.longitude])
+              .addTo(sevaMap)
+              .bindPopup(`<b>${msg.name}</b><br>${msg.message}`);
+          }
+        });
+      } catch (err) {
+        console.error("Backend not running", err);
+      }
+    }
+
+    loadSevaMessages();
+  </script>
+
+  <script src="common.js"></script>
+</body>
+</html>
